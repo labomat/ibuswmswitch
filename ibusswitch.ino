@@ -202,21 +202,10 @@ void loop() {
 }
 
 /*
- * Verwendung auf ESP32:
- * 
- * 1. Verbinde den iBus Datenausgang deines Empfängers mit GPIO 16
- * 2. Verbinde 8 LEDs (mit Vorwiderständen) an die GPIOs: 2, 4, 5, 18, 19, 21, 22, 23
- * 3. Konfiguriere deinen Sender so, dass Kanal 6 Schalter-Kommandos sendet
- * 
- * ESP32 spezifische Anpassungen:
- * - Verwendet HardwareSerial (UART2) statt SoftwareSerial für bessere Performance
- * - GPIO Pins sind für ESP32 optimiert (vermeidet Boot-Pins und Input-Only Pins)
- * - Höhere Serial Baudrate (115200) für Debug-Ausgaben
- * 
  * Kommando-Format:
  * - Bits 7-6: Adresse (0-3)
  * - Bits 5-3: Schalter-Nummer (0-7) 
  * - Bit 0: Schalter-Zustand (0=AUS, 1=EIN)
  * 
- * Die Standard-Adresse ist 0. Du kannst sie mit decoder.setAddress() ändern.
+ * Die Standard-Adresse ist 0. Ändern mit decoder.setAddress().
  */
